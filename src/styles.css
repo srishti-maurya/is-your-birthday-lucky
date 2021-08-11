@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Russo+One&display=swap");
+
+:root {
+  --primaryColor: #031927;
+  --secondaryColor: #E65F5C ;
+  --bgColor: #FFF8F0;
+  --highlightColor: #788AA3;
+}
+
+.App {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-color: var(--bgColor);
+}
+h1,
+h2 {
+  font-family: "Russo One", sans-serif;
+  color: var(--primaryColor);
+}
+a:link {
+  color: var(--highlightColor);
+}
+a{
+  text-decoration: none;
+  padding: 1rem;
+}
+/* visited link */
+a:visited {
+  color: var(--primaryColor);
+}
+
+.intro-section {
+  margin: 6rem 0rem;
+}
+
+#calculate-section {
+  margin: 8rem 0rem;
+  padding: 3rem;
+}
+
+button {
+  margin: 2rem;
+}
+
+label {
+  margin: 0.5rem;
+}
+
+.output {
+  color: var(--secondaryColor);
+  margin: 2rem;
+
+}
+
+footer{
+  background-color: var(--highlightColor);
+  color: whitesmoke;
+  padding: 1rem;
+}
