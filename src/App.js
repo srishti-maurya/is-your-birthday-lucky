@@ -5,10 +5,10 @@ import unhappy from "./low.svg";
 import birthday1 from "./birthday1.svg";
 import birthday2 from "./birthday2.svg";
 
-var sumOfDigits = 0;
+let sumOfDigits = 0;
 
-var date = "";
-var luckyNum = 0;
+let date = "";
+let luckyNum = 0;
 
 const happyImgDiv = (
   <img alt="happyImage" src={happy} width="100%" height="200px" />
@@ -20,18 +20,17 @@ const unhappyImgDiv = (
 export default function App() {
   const [outputMessage, setOutputMessage] = useState(["", ""]);
 
-  function buttonHandler(event) {
+  const buttonHandler = (event) =>{
     event.preventDefault();
     const dateToArray = date.split("-");
     dateToArray.map((str) => {
-      for (var i = 0; i < str.length; i++) {
+      for (let i = 0; i < str.length; i++) {
         sumOfDigits += Number(str[i]);
       }
     });
-    if (sumOfDigits % luckyNum === 0) {
-      setOutputMessage(["Hurray!!You are a lucky person!", happyImgDiv]);
-    } else {
-      setOutputMessage([
+    sumOfDigits % luckyNum === 0?
+      setOutputMessage(["Hurray!!You are a lucky person!", happyImgDiv])
+      :setOutputMessage([
         "Oops!!Your birthday is not a lucky number!",
         unhappyImgDiv,
       ]);
@@ -40,10 +39,12 @@ export default function App() {
 
   return (
     <div className="App">
-    <img alt="birthdayImage" src={birthday1} width="100%" height="200px" />
+      <img alt="birthdayImage" src={birthday1} width="100%" height="200px" />
       <section className="intro-section">
         <h1>Is your birthday lucky?</h1>
-        <a href="#calculate-section">Scroll down or click here 🎁 to check it out!</a>
+        <a href="#calculate-section">
+          Scroll down or click here 🎁 to check it out!
+        </a>
       </section>
       <img alt="birthdayImage" src={birthday2} width="100%" height="200px" />
       <section id="calculate-section">
